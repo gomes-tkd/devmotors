@@ -22,24 +22,6 @@
     text-align: center;
     font-weight: bold;
   }
-
-  & .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 16px;
-    background-color: #30b700;
-    font-weight: 500;
-    color: #fff;
-    border-radius: 8px;
-    padding: 8px 24px;
-    transition: all 0.5s
-  }
-
-  & .link:hover {
-    transform: scale(1.09);
-  }
 }
 
 .contentBanner {

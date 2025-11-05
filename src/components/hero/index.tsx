@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import Link from "next/link";
+import EmployeeContact from "@/components/employee-contact";
 
 interface HeroProps {
     heading: string;
@@ -16,10 +16,7 @@ export default function Hero({ heading, bannerUrl, buttonUrl, buttonTile, icon }
         <main className={styles.main}>
             <div className={styles.containerHero}>
                 <h1 className={styles.title}>{heading}</h1>
-                <Link target={"_blank"} href={buttonUrl} className={styles.link}>
-                    {icon}
-                    {buttonTile}
-                </Link>
+                <EmployeeContact buttonUrl={buttonUrl} buttonTile={buttonTile} icon={icon} />
             </div>
             <div className={styles.contentBanner}>
                 <Image

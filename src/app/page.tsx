@@ -7,6 +7,7 @@ import { Phone } from "lucide-react";
 import Services from "@/components/services";
 import Container from "@/components/container/container";
 import About from "@/components/about";
+import Footer from "@/components/footer";
 
 export default async function Home() {
     const { object }: HomeProps = await getData();
@@ -24,6 +25,7 @@ export default async function Home() {
             <Container>
                 <About object={object} />
                 <Services object={object} />
+                <Footer object={object} />
             </Container>
         </main>
     );

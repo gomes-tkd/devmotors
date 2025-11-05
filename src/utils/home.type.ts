@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface HomeProps {
     object: {
         slug: string;
@@ -37,4 +39,10 @@ export interface ContactProps {
     phone: string;
     address: string;
     time: string;
+}
+
+export interface EmployeeContactProps {
+    buttonTile: string;
+    buttonUrl: string;
+    icon: React.ReactNode;
 }
