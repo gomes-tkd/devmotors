@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { HomeProps } from "@/utils/home.type";
+import { HomeProps } from "@/utils/datas.type";
 import { Mail, Map, Phone, Clock } from "lucide-react";
-import EmployeeContact from "@/components/employee-contact";
+import { EmployeeContact } from "@/components/employee-contact";
 
 export default function Footer({ object }: HomeProps) {
     return (

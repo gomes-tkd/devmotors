@@ -3,8 +3,9 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import { X, Menu } from "lucide-react";
+import { SubmenuProps, ItemSubmenuProps } from "@/utils/datas.type";
 
-export default function Submenu() {
+export default function Submenu({ submenuItems }: { submenuItems: SubmenuProps }) {
     const [isOpen, setIsOpen] = React.useState(false);
 
     React.useEffect(() => {
@@ -38,12 +39,11 @@ export default function Submenu() {
                         <X size={52} color={"#121212"} />
                     </button>
                 )}
-                <li>
-                    <Link href={"/post1"}>Página 1</Link>
-                </li>
-                <li>
-                    <Link href={"/post2"}>Página 2</Link>
-                </li>
+                {submenuItems.objects.map((item: ItemSubmenuProps, index) => (
+                    <li key={index}>
+                        <Link href={`/post/${item.slug}`}>{item.title}</Link>
+                    </li>
+                ))}
             </ul>
         </section>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import Submenu from "@/components/home/submenu";
-import { getData } from "@/utils/actions/get-data";
-import { HomeProps } from "@/utils/home.type";
+import { getData, getSubmenu } from "@/utils/actions/get-data";
+import {HomeProps, ItemSubmenuProps} from "@/utils/datas.type";
 import Hero from "@/components/hero";
 import { Phone } from "lucide-react";
 import Services from "@/components/services";
@@ -11,10 +11,11 @@ import Footer from "@/components/footer";
 
 export default async function Home() {
     const { object }: HomeProps = await getData();
+    const submenu = await getSubmenu();
 
     return (
         <main>
-            <Submenu />
+            {submenu.objects.length > 0 && <Submenu submenuItems={submenu} />}
             <Hero
                 heading={object.metadata.heading}
                 buttonTile={object.metadata.cta_button.title}
@@ -25,7 +26,6 @@ export default async function Home() {
             <Container>
                 <About object={object} />
                 <Services object={object} />
-                <Footer object={object} />
             </Container>
         </main>
     );

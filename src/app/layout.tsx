@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+import {HomeProps} from "@/utils/datas.type";
+import {getData} from "@/utils/actions/get-data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,16 +16,19 @@ export const metadata: Metadata = {
   description: "Sua oficina especializada mais perto de ti.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+    const { object }: HomeProps = await getData();
+
+    return (
     <html lang="pt-BR">
       <body className={`${inter.className}`}>
-          <Header />
+        <Header />
         { children }
+        <Footer object={object} />
       </body>
     </html>
   );

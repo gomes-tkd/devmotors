@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import EmployeeContact from "@/components/employee-contact";
+import { EmployeeContact } from "@/components/employee-contact";
 
 interface HeroProps {
     heading: string;
@@ -26,6 +26,7 @@ export default function Hero({ heading, bannerUrl, buttonUrl, buttonTile, icon }
                     priority={true}
                     quality={100}
                     fill={true}
+                    sizes={"(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 50vw"}
                 />
             </div>
         </main>

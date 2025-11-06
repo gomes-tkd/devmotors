@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import {HomeProps, ServiceProps} from "@/utils/home.type";
+import {HomeProps, ServiceProps} from "@/utils/datas.type";
 import Image from "next/image";
 
 export default function Services({ object }: HomeProps) {
@@ -17,6 +17,7 @@ export default function Services({ object }: HomeProps) {
                                 alt={service.description}
                                 quality={100}
                                 fill={true}
+                                sizes={"(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 50vw"}
                             />
                         </div>
                         <p>{service.description}</p>

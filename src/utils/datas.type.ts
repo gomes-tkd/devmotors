@@ -46,3 +46,42 @@ export interface EmployeeContactProps {
     buttonUrl: string;
     icon: React.ReactNode;
 }
+
+export interface SubmenuProps {
+    objects: ItemSubmenuProps[];
+}
+
+export interface ItemSubmenuProps {
+    slug: string;
+    title: string;
+}
+
+export interface PostProps {
+    objects: ObjectPost[];
+}
+
+export interface ObjectPost {
+    slug: string;
+    title: string;
+    metadata: {
+        banner: {
+            url: string;
+        };
+        button: {
+            title: string;
+            url: string;
+        },
+        description: DescriptionProps;
+    };
+}
+
+export interface DescriptionProps {
+    title: string;
+    text: string;
+    banner: {
+        url: string;
+    };
+    button_active: boolean;
+    button_title: string;
+    button_url: string;
+}
