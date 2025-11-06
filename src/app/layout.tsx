@@ -13,7 +13,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "DevMotors - Sua oficina especializada.",
-  description: "Sua oficina especializada mais perto de ti.",
+  description: "Sua oficina especializada mais perto de ti. SITE FICTÍCIO " +
+      "- Projeto desenvolvido para fins educacionais.",
+  keywords: ["oficina", "oficina carros", "carros", "manutenção carros", "reparação carros"],
+  authors: [{ name: "José Gomes", url: "https://www.linkedin.com/in/jose-bolivar-gomes/" }],
+  creator: "José Gomes - Fullstack Developer",
+  openGraph: {
+      title: "DevMotors - Sua oficina especializada.",
+      images: [`${process.env.NEXT_PUBLIC_URL}/logo.jpg`],
+  },
+  robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true
+      }
+  }
 };
 
 export default async function RootLayout({
